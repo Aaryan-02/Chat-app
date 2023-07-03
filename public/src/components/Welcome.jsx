@@ -18,7 +18,7 @@ const Welcome = () => {
   return (
     <Container>
       <Logout />
-      <h2 className='logoutInfo'>Please logout and create additional accounts for more conversations</h2>
+      <h3 className='logoutInfo'>Please logout and create additional accounts for more conversations</h3>
       <img src={Robot} alt="" />
       <h1>
         Welcome, <span>{userName}</span>
@@ -45,7 +45,7 @@ const Container = styled.div`
   }
   .logoutInfo {
     margin-top: 10px;
-    margin-bottom: -4px;
+    margin-bottom: -15px;
   }
 
   .glnvzv {
