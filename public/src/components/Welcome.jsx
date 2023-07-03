@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import Robot from "../assets/robot.gif";
+import Logout from '../components/Logout';
 
 const Welcome = () => {
   const [userName, setUserName] = useState("");
 
-  useEffect(() =>{
+  useEffect(() => {
     const fetchData6 = async () => {
       setUserName(
         await JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
@@ -16,6 +17,8 @@ const Welcome = () => {
   }, []);
   return (
     <Container>
+      <Logout />
+      <h2 className='logoutInfo'>Please logout and create additional accounts for more conversations</h2>
       <img src={Robot} alt="" />
       <h1>
         Welcome, <span>{userName}</span>
@@ -39,5 +42,16 @@ const Container = styled.div`
   }
   span {
     color: #4e0eff;
+  }
+  .logoutInfo {
+    margin-top: 10px;
+    margin-bottom: -4px;
+  }
+
+  .glnvzv {
+    width: 5rem;
+    height: 4rem;
+    border-radius: 33px;
+    margin-bottom:4px;
   }
 `
