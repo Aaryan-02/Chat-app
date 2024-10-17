@@ -58,13 +58,19 @@ const SetAvatar = () => {
     
     useEffect(() => {
         const fetchData = async () => {
+            const corsProxy = "https://cors-anywhere.herokuapp.com/";
             const data = [];
             for (let i = 0; i < 4; i++) {
-                const image = await axios.get(
-                    `${api}/${Math.round(Math.random() * 1000)}?apikey=${apiKey}`
-                );
-                const buffer = Buffer.from(image.data);
-                data.push(buffer.toString("base64"));
+                try {
+                    const image = await axios.get(
+                        `${corsProxy}${api}/${Math.round(Math.random() * 1000)}?apikey=${apiKey}`
+                    );
+                    const buffer = Buffer.from(image.data);
+                    data.push(buffer.toString("base64"));
+                } catch (error) {
+                    console.error("Error fetching avatar:", error);
+                    toast.error("Error fetching avatar. Please try again.", toastOptions);
+                }
             }
             setAvatars(data);
             setIsLoading(false);
