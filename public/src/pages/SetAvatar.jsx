@@ -58,7 +58,7 @@ const SetAvatar = () => {
     
     useEffect(() => {
         const fetchData = async () => {
-            const corsProxy = "https://cors-anywhere.herokuapp.com/";
+            const corsProxy = "https://corsproxy.io/?";
             const data = [];
             for (let i = 0; i < 4; i++) {
                 try {
