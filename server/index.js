@@ -7,7 +7,12 @@ const app = express();
 const socket = require("socket.io")
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://snappy-blue.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", userRoutes)
