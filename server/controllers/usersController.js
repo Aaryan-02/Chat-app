@@ -76,6 +76,7 @@ module.exports.getAllUsers = async (req, res, next) => {
 
 module.exports.setAvatar = async (req, res, next) => {
     try {
+        console.log("Request to setAvatar:", req.method, req.params, req.body); // Log method, params, and body
         const userId = req.params.id;
         const avatarImage = req.body.image;
         const userData = await User.findByIdAndUpdate(
