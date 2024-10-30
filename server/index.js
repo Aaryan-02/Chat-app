@@ -8,7 +8,7 @@ const socket = require("socket.io")
 require("dotenv").config();
 
 app.use(cors({
-  origin: "https://snappy-blue.vercel.app",
+  origin: "https://vercel.live",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
