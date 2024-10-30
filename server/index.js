@@ -7,11 +7,7 @@ const app = express();
 const socket = require("socket.io")
 require("dotenv").config();
 
-app.use(cors({
-  origin: "https://vercel.live",
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors());
 
 app.use(express.json());
 
