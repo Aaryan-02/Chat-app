@@ -43,14 +43,7 @@ const Contacts = ({ contacts, changeChat, currentUser }) => {
                   onClick={() => changeCurrentChat(index, contact)}
                 >
                   <div className="avatar">
-                    <img
-                      src={
-                        contact.avatarImage.startsWith("/static/media")
-                          ? contact.avatarImage // If it's a relative path, use it directly
-                          : `data:image/svg+xml;base64, ${contact.avatarImage}` // If it's Base64, use data URL
-                      }
-                      alt="avatar"
-                    />
+                    <img src={`data:image/svg+xml;base64, ${contact.avatarImage}`} alt="avatar" />
                   </div>
                   <div className="username">
                     <h3>{contact.username}</h3>
@@ -61,15 +54,7 @@ const Contacts = ({ contacts, changeChat, currentUser }) => {
           </div>
           <div className="current-user">
             <div className="avatar">
-              {/* <img src={`data:image/svg+xml;base64, ${currentUserImage}`} alt="avatar" /> */}
-              <img
-                src={
-                  currentUserImage.startsWith("/static/media")
-                    ? currentUserImage // If it's a relative path, use it directly
-                    : `data:image/svg+xml;base64, ${currentUserImage}` // If it's Base64, use data URL
-                }
-                alt="avatar"
-              />
+              <img src={`data:image/svg+xml;base64, ${currentUserImage}`} alt="avatar" />
             </div>
             <div className="username">
               <h2>{currentUserName}</h2>
